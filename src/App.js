@@ -1,5 +1,5 @@
 import web3 from './utils/initWeb3'
-import contractInstance from './eth/lotteryInstance'
+import CardExampleCard from './display/ui'
 import React, {Component} from 'react';
 import lotteryInstance from "./eth/lotteryInstance";
 
@@ -40,6 +40,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <CardExampleCard/>
                 <p>hello world</p>
                 <p>manager:{this.state.manager}</p>
                 <p>round:{this.state.round}</p>
