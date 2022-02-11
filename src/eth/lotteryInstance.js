@@ -4,7 +4,7 @@ let abi = [
     {
         "constant": false,
         "inputs": [],
-        "name": "drawWinner",
+        "name": "DrawWinner",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -139,7 +139,7 @@ let abi = [
     }
 ]
 
-let address = '0x669929f5C170F4d8c110bb73298a39D051324Bca'
+let address = '0x65229354439B95DcBe48FD2B936E9808eE5300E1'
 let contractInstance = new web3.eth.Contract(abi, address)
-console.log('address:',contractInstance.options.address)
-module.exports = contractInstance
+console.log('address:', contractInstance.options.address)
+export default contractInstance
