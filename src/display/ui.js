@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Icon, Image, Statistic, Button} from 'semantic-ui-react'
+import {Card, Image, Statistic, Button} from 'semantic-ui-react'
 
 const CardExampleCard = (props) => (
     <Card>
@@ -16,10 +16,7 @@ const CardExampleCard = (props) => (
             </Card.Description>
         </Card.Content>
         <Card.Content extra>
-            <a>
-                <Icon name='user'/>
-                {props.playerCounts}人参与
-            </a>
+            {props.playerCounts}人参与
         </Card.Content>
         <Card.Content extra>
             <Statistic color='red'>
@@ -30,7 +27,6 @@ const CardExampleCard = (props) => (
         <Card.Content extra>
             <Statistic color='blue'>
                 <Statistic.Value>第{props.round}期</Statistic.Value>
-                <a href='#'>点我查看交易历史</a>
             </Statistic>
         </Card.Content>
         <Button animated='fade' color='orange' onClick={props.play} disabled={props.isClicked}>
