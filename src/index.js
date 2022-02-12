@@ -4,8 +4,6 @@ import App from './App';
 import 'semantic-ui-css/semantic.css'
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
+    <App/>,
     document.getElementById('root')
 );

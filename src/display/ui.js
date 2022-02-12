@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Icon, Image, Statistic} from 'semantic-ui-react'
+import {Card, Icon, Image, Statistic, Button} from 'semantic-ui-react'
 
 const CardExampleCard = (props) => (
     <Card>
@@ -9,6 +9,7 @@ const CardExampleCard = (props) => (
             <Card.Meta>
                 <p>管理员地址：{props.manager}</p>
                 <p>当前地址：{props.currentAccount}</p>
+                <p>上期中奖地址：{props.winner}</p>
             </Card.Meta>
             <Card.Description>
                 每晚八点准时开奖，不见不散！
@@ -32,6 +33,18 @@ const CardExampleCard = (props) => (
                 <a href='#'>点我查看交易历史</a>
             </Statistic>
         </Card.Content>
+        <Button animated='fade' color='orange' onClick={props.play} disabled={props.isClicked}>
+            <Button.Content visible>投一注试试</Button.Content>
+            <Button.Content hidden>单车变摩托</Button.Content>
+        </Button>
+        <Button inverted color='red' style={{display: props.isShowButton}} onClick={props.DrawWinner}
+                disabled={props.isClicked}>
+            开奖
+        </Button>
+        <Button inverted color='orange' style={{display: props.isShowButton}} onClick={props.refund}
+                disabled={props.isClicked}>
+            退奖
+        </Button>
     </Card>
 )
 
