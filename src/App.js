@@ -18,7 +18,8 @@ class App extends Component {
     }
 
     async componentWillMount() {
-        let accounts = await web3.eth.getAccounts()
+        await window.ethereum.enable()
+        let currentAccount = await window.ethereum.selectedAddress
         let manager = await lotteryInstance.methods.manager().call()
         let round = await lotteryInstance.methods.round().call()
         let winner = await lotteryInstance.methods.winner().call()
@@ -33,22 +34,22 @@ class App extends Component {
             playerCounts,
             balance,
             players,
-            currentAccount: accounts[0],
+            currentAccount,
         })
     }
 
     render() {
         return (
             <div>
-                <CardExampleCard/>
-                <p>hello world</p>
-                <p>manager:{this.state.manager}</p>
-                <p>round:{this.state.round}</p>
-                <p>winner:{this.state.winner}</p>
-                <p>playerCounts:{this.state.playerCounts}</p>
-                <p>balance:{this.state.balance}</p>
-                <p>players:{this.state.players}</p>
-                <p>currentAccount:{this.state.currentAccount}</p>
+                <CardExampleCard
+                    manager={this.state.manager}
+                    round={this.state.round}
+                    winner={this.state.winner}
+                    playerCounts={this.state.playerCounts}
+                    balance={this.state.balance}
+                    players={this.state.players}
+                    currentAccount={this.state.currentAccount}
+                />
             </div>
         );
     }
